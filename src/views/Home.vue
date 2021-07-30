@@ -1,6 +1,6 @@
 <template>
     <div>
-
+        Vista Home
     </div>
 </template>
 

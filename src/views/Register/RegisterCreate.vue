@@ -1,6 +1,6 @@
 <template>
     <div>
-
+        Crear Registro
     </div>
 </template>
 

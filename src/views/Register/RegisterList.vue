@@ -1,6 +1,6 @@
 <template>
     <div>
-
+        Listado de registros
     </div>
 </template>
 

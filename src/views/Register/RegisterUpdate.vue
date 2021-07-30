@@ -1,6 +1,6 @@
 <template>
     <div>
-
+        Actualizar Registro
     </div>
 </template>
 

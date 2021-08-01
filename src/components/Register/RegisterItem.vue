@@ -9,9 +9,6 @@
       <span>Actividad Elegida</span>
     </td>
     <td class="py-3 px-6 text-center">
-      <span>Detalles importantes</span>
-    </td>
-    <td class="py-3 px-6 text-center">
       <div class="flex item-center justify-center">
         <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
           <svg

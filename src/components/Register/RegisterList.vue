@@ -1,11 +1,10 @@
 <template>
-  <div class="mx-8">
+  <div class="">
     <table v-if="registers.length" class="min-w-max w-full table-auto shadow-lg">
       <thead>
         <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
           <th class="py-3 px-6 text-left">Nombre</th>
           <th class="py-3 px-6 text-left">Actividad</th>
-          <th class="py-3 px-6 text-center">Detalles</th>
           <th class="py-3 px-6 text-center">Acciones</th>
         </tr>
       </thead>

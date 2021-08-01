@@ -59,6 +59,11 @@
         components:{
             Datepicker
         },
+        mounted(){
+            if(this.activity.beginning){
+                this.dateAuxiliar = this.activity.beginning
+            }
+        },
         data(){
             return{
                 es: es,
@@ -72,7 +77,6 @@
         },
         methods:{
             changeAct(){
-                console.log('cambiando actividad')
                 this.$emit('changeActivity')
             },
 

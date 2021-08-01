@@ -64,7 +64,7 @@ export async function setSelectedRegister({commit}, payload){
             method: 'GET',
         })
 
-        commit('getRegisters', data)
+        commit('setSelectedRegister', data)
 
     } catch (error) {
         commit('setError', error)

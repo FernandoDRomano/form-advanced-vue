@@ -4,7 +4,8 @@
       <thead>
         <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
           <th class="py-3 px-6 text-left">Nombre</th>
-          <th class="py-3 px-6 text-left">Actividad</th>
+          <th class="py-3 px-6 text-left">Deporte</th>
+          <th class="py-3 px-6 text-left">Equipo</th>
           <th class="py-3 px-6 text-center">Acciones</th>
         </tr>
       </thead>

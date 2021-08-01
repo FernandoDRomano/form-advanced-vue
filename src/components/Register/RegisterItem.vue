@@ -2,15 +2,18 @@
   <tr class="bg-white border-b border-gray-200 hover:bg-gray-100">
     <td class="py-3 px-6 text-left whitespace-nowrap">
       <div class="flex items-center">
-        <span class="font-medium">Nombre Completo</span>
+        <span class="font-medium">{{ getFullName }}</span>
       </div>
     </td>
     <td class="py-3 px-6 text-left">
-      <span>Actividad Elegida</span>
+      <span> {{ getActivity }} </span>
+    </td>
+    <td class="py-3 px-6 text-left">
+      <span> {{ getNameTeam }} </span>
     </td>
     <td class="py-3 px-6 text-center">
       <div class="flex item-center justify-center">
-        <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
+        <div @click="showFormUpdate" class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="h-5 w-5 stroke-current"
@@ -26,7 +29,7 @@
           </svg>
         </div>
 
-        <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
+        <div @click="deleteRegister" class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="h-5 w-5 stroke-current"
@@ -69,6 +72,8 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
+
 export default {
   name: "RegisterItem",
   props: {
@@ -77,5 +82,32 @@ export default {
       required: true,
     },
   },
+  computed:{
+    getFullName(){
+      return `${this.register.data_personal.last_name}, ${this.register.data_personal.name}`;
+    },
+    getActivity(){
+      return `${this.register.activity.name.toUpperCase()}`
+    },
+    getNameTeam(){
+      return `${this.register.description.team_name}`
+    }
+  },
+  methods:{
+    ...mapActions({
+      _deleteRegister: 'register/deleteRegister'
+    }),
+    async deleteRegister(){
+      await this._deleteRegister(this.register)
+    },
+    showFormUpdate(){
+      this.$router.push({
+        name: 'registro-actualizar',
+        params:{
+          id: this.register.id
+        }
+      })
+    }
+  }
 };
 </script>

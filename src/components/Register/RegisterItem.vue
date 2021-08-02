@@ -1,22 +1,22 @@
 <template>
   <tr class="bg-white border-b border-gray-200 hover:bg-gray-100">
-    <td class="py-3 px-6 text-left whitespace-nowrap">
+    <td class="py-3 px-2 md:px-6 text-left whitespace-nowrap">
       <div class="flex items-center">
         <span class="font-medium">{{ getFullName }}</span>
       </div>
     </td>
-    <td class="py-3 px-6 text-left">
+    <td class="py-3 px-2 md:px-6 text-left hidden sm:table-cell">
       <span> {{ getActivity }} </span>
     </td>
-    <td class="py-3 px-6 text-left">
+    <td class="py-3 px-2 md:px-6 text-left hidden lg:table-cell">
       <span> {{ getNameTeam }} </span>
     </td>
-    <td class="py-3 px-6 text-center">
+    <td class="py-3 px-2 md:px-6 text-center">
       <div class="flex item-center justify-center">
         <div @click="showFormUpdate" class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            class="h-5 w-5 stroke-current"
+            class="h-4 md:h-5 w-4 md:w-5 stroke-current"
             fill="none"
             viewBox="0 0 24 24"
           >
@@ -32,7 +32,7 @@
         <div @click="deleteRegister" class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            class="h-5 w-5 stroke-current"
+            class="h-4 md:h-5 w-4 md:w-5 stroke-current"
             fill="none"
             viewBox="0 0 24 24"
           >
@@ -45,10 +45,10 @@
           </svg>
         </div>
 
-        <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
+        <div @click="showRegister" class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            class="h-5 w-5 stroke-current"
+            class="h-4 md:h-5 w-4 md:w-5 stroke-current"
             fill="none"
             viewBox="0 0 24 24"
           >
@@ -107,6 +107,9 @@ export default {
           id: this.register.id
         }
       })
+    },
+    showRegister(){
+      this.$emit('showRegister', this.register.id)
     }
   }
 };

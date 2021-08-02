@@ -30,6 +30,11 @@ const routes = [
         name: 'registro-actualizar',
         component: () => import(/* webpackChunkName: "RegisterUpdate" */ '@/views/Register/RegisterUpdate.vue')
       },
+      {
+        path: 'mostrar/:id',
+        name: 'registro-mostrar',
+        component: () => import(/* webpackChunkName: "RegisterUpdate" */ '@/views/Register/RegisterShow.vue')
+      }
     ]
   }
 ]

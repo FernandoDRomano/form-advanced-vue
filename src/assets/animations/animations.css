@@ -1,0 +1,85 @@
+/* Las animaciones de entrada y salida pueden usar */
+/* funciones de espera y duración diferentes.      */
+.fade-enter-active {
+  transition: all 0.5s ease-in-out;
+}
+.fade-leave-active {
+  transition: all 0.7s cubic-bezier(1, 0.5, 0.8, 1);
+}
+.fade-enter {
+  opacity: 0;
+  transform: translateY(500px);
+}
+.fade-leave-to {
+  transform: translateX(800px);
+  opacity: 0;
+}
+
+
+.fade-top-enter-active{
+  transition: all .5s ease-in-out;
+}
+
+.fade-top-leave-active{
+  transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.fade-top-enter {
+  transform: translateY(-500px);
+  opacity: 0;
+}
+.fade-top-leave-to {
+  transform: translateX(800px);
+  opacity: 0;
+}
+
+.fade-right-enter-active {
+  transition: all 0.7s ease-in-out;
+}
+.fade-right-leave-active {
+  transition: all 0.7s cubic-bezier(1, 0.5, 0.8, 1);
+}
+.fade-right-enter {
+  transform: translateX(500px);
+}
+.fade-right-leave-to {
+  transform: scale(0);
+  opacity: 0;
+}
+.fade-right-move {
+  transition: transform 1s;
+}
+
+.scale-enter-active {
+  transition: all 0.5s ease-in-out;
+}
+.scale-leave-active {
+  transition: all 0.7s cubic-bezier(1, 0.5, 0.8, 1);
+}
+.scale-enter {
+  transform: scale(0);
+  opacity: 0;
+}
+.scale-leave-to {
+  transform: scale(0);
+  opacity: 0;
+}
+
+.scale-move {
+  transition: transform .7s;
+}
+
+.opacity-scale-enter-active {
+  transition: all 0.5s ease-in-out;
+}
+.opacity-scale-leave-active {
+  transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1);
+}
+.opacity-scale-enter {
+  transform: scale(0) rotate(-360deg);
+  opacity: 0;
+}
+.opacity-scale-leave-to {
+  transform: scale(0);
+  opacity: 0;
+}

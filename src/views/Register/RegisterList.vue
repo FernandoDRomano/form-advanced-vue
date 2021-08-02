@@ -9,7 +9,9 @@
             </button>
         </div>
         <list :registers="registers" @showRegister="showRegister"></list>
-        <register-show v-if="showModal" :id="idRegiter" @closeModal="closeModal"></register-show>
+        <transition name="opacity-scale" mode="out-in">
+            <register-show v-if="showModal" :id="idRegiter" @closeModal="closeModal"></register-show>
+        </transition>
     </div>
 </template>
 

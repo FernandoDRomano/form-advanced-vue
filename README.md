@@ -1,4 +1,6 @@
-# formulario-complejo-con-vuex
+# Example form with vue
+
+This example uses vue, vuex, vue-router, tailwind and vee-validate. The data are save in localstorage
 
 ## Project setup
 ```
@@ -15,5 +17,5 @@ npm run serve
 npm run build
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Demo
+[Click Here :laughing:](https://form-advanced-with-vue-vuex-vue-router-tailwind-localstorage-vee-validate.netlify.app/).

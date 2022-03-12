@@ -1,72 +1,36 @@
 import Vue from 'vue'
 
+const localStorage = window.localStorage
+
 export async function getRegisters({commit}){
-    try {
-        const { data } = await Vue.axios({
-            url: 'registros',
-            method: 'GET'
-        })
 
-        commit('setRegisters', data)
-    } catch (error) {
-        commit('setError', error)
+    if(!localStorage.getItem('registers')){
+        localStorage.setItem('registers', JSON.stringify([]))
     }
+
+    const registers = JSON.parse(localStorage.getItem('registers'))
+
+    commit('setRegisters', registers)
+
 }
 
-export async function addRegister({commit, dispatch}, payload){
-    try {
-        await Vue.axios({
-            url: 'registros',
-            method: 'POST',
-            data: payload
-        })
-
-        dispatch('getRegisters')
-
-    } catch (error) {
-        commit('setError', error)
+export async function addRegister({commit}, payload){
+    const register = {
+        id: Date.now(),
+        ...payload
     }
-}
 
-export async function updateRegister({commit, dispatch}, payload){
-    try {
-        await Vue.axios({
-            url: `registros/${payload.id}`,
-            method: 'PUT',
-            data: payload
-        })
-
-        dispatch('getRegisters')
-
-    } catch (error) {
-        commit('setError', error)
-    }
-}
-
-export async function deleteRegister({commit, dispatch}, payload){
-    try {
-        await Vue.axios({
-            url: `registros/${payload.id}`,
-            method: 'DELETE',
-        })
-
-        dispatch('getRegisters')
-
-    } catch (error) {
-        commit('setError', error)
-    }
+    commit('addRegister', register)
 }
 
 export async function setSelectedRegister({commit}, payload){
-    try {
-        const { data } = await Vue.axios({
-            url: `registros/${payload.id}`,
-            method: 'GET',
-        })
+    commit('setSelectedRegister', payload)
+}
 
-        commit('setSelectedRegister', data)
+export async function updateRegister({commit}, payload){
+    commit('updateRegister', payload)
+}
 
-    } catch (error) {
-        commit('setError', error)
-    }
+export async function deleteRegister({commit}, payload){
+    commit('deleteRegister', payload)
 }

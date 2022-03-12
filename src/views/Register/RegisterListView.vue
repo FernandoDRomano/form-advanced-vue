@@ -4,8 +4,12 @@
         <div class="flex justify-center md:justify-end my-3">
             <button 
                 @click="showViewCreateRegister"
-                class="bg-green-700 px-4 py-1 text-sm sm:text-base text-white font-light rounded-lg shadow-lg">
-                Nuevo +
+                class="bg-green-700 flex items-center px-4 py-1 text-sm sm:text-base text-white font-light rounded-lg shadow-lg">
+                Nuevo  
+                <svg xmlns="http://www.w3.org/2000/svg" 
+                 viewBox="0 0 24 24" class="ml-2 h-4 md:h-5 w-4 md:w-5 fill-current">
+                <path d="M0 0h24v24H0z" fill="none"/>
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
             </button>
         </div>
         <list :registers="registers" @showRegister="showRegister"></list>
@@ -21,7 +25,7 @@
     import { mapState, mapActions } from 'vuex'
 
     export default {
-        name: 'RegisterList',
+        name: 'RegisterListView',
         async mounted(){
             await this.getRegisters()
         },

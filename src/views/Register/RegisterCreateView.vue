@@ -15,7 +15,7 @@
     import { mapActions } from 'vuex'
     
     export default {
-        name: 'RegisterCreate',
+        name: 'RegisterCreateView',
         components:{
             FormData
         },

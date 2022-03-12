@@ -1,6 +1,6 @@
 <template>
     <ValidationObserver v-slot="{invalid, handleSubmit}">
-        <form @submit.prevent="handleSubmit(submitForm)" class="border px-4 md:px-8 pt-6 pb-4 md:pt-10 md:pb-6 rounded-lg shadow-md mb-8 md:mb-0">
+        <form @submit.prevent="handleSubmit(submitForm)" class="border px-4 md:px-8 pt-6 pb-4 md:pt-10 md:pb-6 rounded-lg shadow-md mb-8">
             <h2 class="text-center font-medium text-2xl mb-4">{{ title }}</h2>
             <data-personal :data_personal="formData.data_personal"></data-personal>
             <data-activity :activity="formData.activity" @changeActivity="changeActivity"></data-activity>

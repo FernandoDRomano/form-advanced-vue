@@ -18,4 +18,4 @@ npm run build
 ```
 
 ### Demo
-[Click Here :laughing:](https://form-advanced-with-vue-vuex-vue-router-tailwind-localstorage-vee-validate.netlify.app/).
+[Click Here :laughing:](https://form-advanced-with-vue.netlify.app/).
